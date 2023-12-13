@@ -9,7 +9,9 @@ namespace NewsApp.Profiles
         public MappingProfile()
         {
             CreateMap<Article, ArticleDto>();
+            CreateMap<ArticleDto, Article>();
             CreateMap<User, UserDto>();
+            CreateMap<UserDto, User>();
         }
     }
 }

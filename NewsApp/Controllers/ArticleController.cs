@@ -38,5 +38,11 @@ namespace NewsApp.Controllers
         {
             return await _articleRepository.UpdateArticle(id, article);
         }
+
+        [HttpDelete]
+        public async Task<ArticleDto> DeleteArticleById(int id)
+        {
+            return await _articleRepository.DeleteArticle(id);
+        }
     }
 }

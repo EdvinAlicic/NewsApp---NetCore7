@@ -14,6 +14,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<DataContext>(dbContextOptions => dbContextOptions.UseSqlServer(builder.Configuration.GetConnectionString("DbConnectionString")));
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
+builder.Services.AddTransient<ITokenRepository, TokenRepository>();
 
 var app = builder.Build();
 
