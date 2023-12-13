@@ -11,7 +11,7 @@ namespace NewsApp.Interfaces
         private readonly SymmetricSecurityKey _key;
         public TokenRepository(IConfiguration config)
         {
-            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TokeyKeyForUsers"));
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TokenKeyForUsers"));
         }
         public string CreateToken(User user)
         {
