@@ -15,6 +15,7 @@ builder.Services.AddDbContext<DataContext>(dbContextOptions => dbContextOptions.
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 builder.Services.AddTransient<ITokenRepository, TokenRepository>();
+builder.Services.AddTransient<ICommentRepository, CommentRepository>();
 
 var app = builder.Build();
 
