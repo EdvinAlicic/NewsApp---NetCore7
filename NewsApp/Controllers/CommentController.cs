@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NewsApp.DTOs;
 using NewsApp.Interfaces;
@@ -15,6 +16,7 @@ namespace NewsApp.Controllers
             _commentRepository = commentRepository;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddComment([FromBody] CommentDto commentDto)
         {
@@ -23,7 +25,8 @@ namespace NewsApp.Controllers
             return Ok(addedComment);
         }
 
-        [HttpGet("id")]
+        [Authorize]
+        [HttpGet("articleId")]
         public async Task<IActionResult> GetCommentsByArticleId(int articleId)
         {
             var comments = await _commentRepository.GetAllCommentsByArticleId(articleId);

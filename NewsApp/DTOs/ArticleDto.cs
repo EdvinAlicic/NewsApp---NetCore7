@@ -9,6 +9,5 @@ namespace NewsApp.DTOs
         public string Description { get; set; }
         public string Author { get; set; }
         public string? PhotoUrl { get; set; }
-        public List<CommentDto> Comments { get; set; }
     }
 }
